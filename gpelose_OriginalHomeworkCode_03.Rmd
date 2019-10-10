@@ -382,8 +382,8 @@ sd(mysample$height)
 Constucting the standard error for my sample height.
 
 ```{r}
-
+pop_se <- sqrt(^2/n)
 ```
 
-I am struggling to figure out how to do this, I have spent a long time on number 5 and cannot figure it out I need some help. 
+I am struggling to figure out how to do this, I have spent a long time on number 5 and cannot figure it out, I need some help. Something happened to my stnadard deviation from my population once I have removed the 30 variables and now I can not figure out what to do and I have run out of time. 
 
