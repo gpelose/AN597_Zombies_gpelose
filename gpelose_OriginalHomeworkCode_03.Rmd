@@ -149,17 +149,53 @@ sd_y_of_edu
 
 
 QUESTION 2:
-Use {ggplot} to make boxplots of each of these variables by gender.
+Use {ggplot} to make boxplots of each of these variables by gender.(height, weight, age, number of zombies killed, and years of education)
 
+Boxplot for gender and height.
 ```{r}
-f <- ggplot(data=d, aes(x=d$gender, y=d$height))
-f <- f + geom_boxplot(x=d$gender, y=d$height)
+f <- ggplot(data=d, aes(x=gender, y=height))
+g <- f + geom_boxplot(color="blue")
+g
 ```
 
+boxplot for gender and weight.
 
+```{r}
+f <- ggplot(data=d, aes(x=gender, y=weight))
+g <- f + geom_boxplot(color="blue")
+g
+```
 
+boxplot for age.
 
+```{r}
+f <- ggplot(data=d, aes(x=gender, y=age))
+g <- f + geom_boxplot(color="blue")
+g
+```
 
+boxplot for zombies_killed.
+
+```{r}
+f <- ggplot(data=d, aes(x=gender, y=zombies_killed))
+g <- f + geom_boxplot(color="blue")
+g
+```
+
+boxplot for years of education:
+
+```{r}
+f <- ggplot(data=d, aes(x=gender, y=years_of_education))
+g <- f + geom_boxplot(color="blue")
+g
+```
+
+QUESTION #3
+Use {ggplot} to make scatterplots of height and weight in relation to age. Do these variables seem to be related? In what way?
+
+```{r}
+
+```
 
 
 
