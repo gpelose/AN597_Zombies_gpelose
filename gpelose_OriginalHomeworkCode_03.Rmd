@@ -69,9 +69,13 @@ sd_height
 summary(d)
 ```
 
+Finding the population mean and sd for weight. (it took me over an hour to realize that i need d$weight instead of just weight, for some reason I do not need the $ for height when doing my first sample)
 ```{r}
-table(weight)
+table(d$weight)
+weight <- (d$weight)
 ```
+
+
 Finding the pop mean and sd for weight
 ```{r}
 weight_mean <- function(x){sum(weight)/1000}
@@ -88,13 +92,72 @@ sd_weight
 
 ```
 
+Finding the pop mean and sd for age
+
+```{r}
+age <- (d$age)
+
+age_mean <- function(x){sum(age)/1000}
+mu_age <- age_mean(x)
+mu_age
+
+pop_v <- function(x){sum((age-mu_age)^2)/(1000)}
+v_age <- pop_v(x)
+v_age
+
+pop_sd <- function(x){sqrt(v_age)}
+sd_age <- pop_sd(x)
+sd_age
+
+```
+
+Finding the pop mean and sd for number of zombies killed
+
+```{r}
+z_killed <- (d$zombies_killed)
+
+z_killed_mean <- function(x){sum(z_killed)/1000}
+mu_z_killed <- z_killed_mean(x)
+mu_z_killed
+
+pop_v <- function(x){sum((z_killed-mu_z_killed)^2)/(1000)}
+v_z_killed <- pop_v(x)
+v_z_killed
+
+pop_sd <- function(x){sqrt(v_z_killed)}
+sd_z_killed <- pop_sd(x)
+sd_z_killed
+```
+
+Finding the pop mean and sd for years_of_education
+
+```{r}
+y_of_edu <- (d$years_of_education)
+
+y_of_edu_mean <- function(x){sum(y_of_edu)/1000}
+mu_y_of_edu <- y_of_edu_mean(x)
+mu_y_of_edu
+
+pop_v <- function(x){sum((y_of_edu-mu_y_of_edu)^2)/(1000)}
+v_y_of_edu <- pop_v(x)
+v_y_of_edu
+
+pop_sd <- function(x){sqrt(v_y_of_edu)}
+sd_y_of_edu <- pop_sd(x)
+sd_y_of_edu
+```
+
+
+QUESTION 2:
+Use {ggplot} to make boxplots of each of these variables by gender.
+
+```{r}
+f <- ggplot(data=d, aes(x=d$gender, y=d$height))
+f <- f + geom_boxplot(x=d$gender, y=d$height)
+```
 
 
 
-
-
-
-I will now plot the data
 
 
 
