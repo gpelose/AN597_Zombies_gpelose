@@ -4,4 +4,101 @@ author: "Greg Pelose"
 date: "10/9/2019"
 output: html_document
 ---
+***
+```{r}
+install.packages("curl")
+install.packages("ggplot2")
+install.packages("gridextra")
+install.packages("manipulate")
+install.packages("lmodel2")
+```
+
+```{r}
+library("curl")
+library("ggplot2")
+library("manipulate")
+library("lmodel2")
+```
+
+I will first be uploading the zombies.cvs data using the curl cuntion and assigning this the varable "f"
+
+```{r}
+f <- curl("https://raw.githubusercontent.com/fuzzyatelin/fuzzyatelin.github.io/master/AN597_Fall19/zombies.csv")
+d <- read.csv(f, header = TRUE, sep = ",", stringsAsFactors = FALSE)
+head(d)
+```
+
+FIRST QUESTION:
+(reminder to add line)
+Calculate the population mean and standard deviation for each quantitative random variable (height, weight, age, number of zombies killed, and years of education). NOTE: You will not want to use the built in var() and sd() commands as these are for samples.
+
+```{r}
+#Ask for the names of the categories 
+names(d)
+```
+
+```{r}
+# Ask for summaries of the data 
+summary(d)
+```
+
+This above only gives the sample mean I need to find th population mean.  
+
+```{r}
+table(height)
+```
+
+Finding the populaiton mean and standard deviation for height!
+
+```{r}
+height_mean <- function(x){sum(height)/1000}
+mu <- height_mean(x)
+mu
+
+pop_v <- function(x){sum((height-mu)^2)/(1000)}
+v_height <- pop_v(x)
+v_height
+
+pop_sd <- function(x){sqrt(v)}
+sd_height <- pop_sd(x)
+sd_height
+```
+
+
+```{r}
+summary(d)
+```
+
+```{r}
+table(weight)
+```
+Finding the pop mean and sd for weight
+```{r}
+weight_mean <- function(x){sum(weight)/1000}
+mu_weight <- weight_mean(x)
+mu_weight
+
+pop_v <- function(x){sum((weight-mu_weight)^2)/(1000)}
+v_weight <- pop_v(x)
+v_weight
+
+pop_sd <- function(x){sqrt(v_weight)}
+sd_weight <- pop_sd(x)
+sd_weight
+
+```
+
+
+
+
+
+
+
+I will now plot the data
+
+
+
+
+
+
 
