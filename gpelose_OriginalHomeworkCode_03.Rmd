@@ -193,9 +193,33 @@ g
 QUESTION #3
 Use {ggplot} to make scatterplots of height and weight in relation to age. Do these variables seem to be related? In what way?
 
+height vs age, red color becasue we are talking about zombies. 
 ```{r}
-
+f <- ggplot(data=d, aes(x=height, y=age))
+g <- f + geom_point(color="red")
+g
 ```
+
+weight vs age, orange becasue we are close to halloween 
+
+```{r}
+f <- ggplot(data=d, aes(x=weight, y=age))
+g <- f + geom_point(color="orange")
+g
+```
+
+Written response:
+
+height and age is definitely more related than weight and age. As the people get older you seem to generally get taller. There seems like there is a slight trend in weight and age, where as you get older you get heavier, but it is not a pronounced as height vs age. There is definitley more variance in weight and age. 
+
+Question #4:
+
+Using histograms and Q-Q plots, check whether the quantitative variables seem to be drawn from a normal distribution. Which seem to be and which do not (hint: not all are drawn from the normal distribution)? For those that are not normal, can you determine from which common distribution they are drawn?
+
+
+
+
+
 
 
 
