@@ -216,12 +216,174 @@ Question #4:
 
 Using histograms and Q-Q plots, check whether the quantitative variables seem to be drawn from a normal distribution. Which seem to be and which do not (hint: not all are drawn from the normal distribution)? For those that are not normal, can you determine from which common distribution they are drawn?
 
+So I will be using my mean and sd that I obtained from earlier to plug into some rnorm histograms. This will allow for me to put my information into a normal distribution.
 
+Starting with height.
 
+```{r}
+height_mean <- function(x){sum(height)/1000}
+mu <- height_mean(x)
+mu
 
+pop_v <- function(x){sum((height-mu)^2)/(1000)}
+v_height <- pop_v(x)
+v_height
 
+pop_sd <- function(x){sqrt(v)}
+sd_height <- pop_sd(x)
+sd_height
+```
 
+```{r}
+n <- 1000
+v <- rnorm(n,mu,sd_height)
+hist(v)
+qqnorm(v)
+qqline(v)
+```
+Yes the distribution for height looks to be quite normal. 
 
+now I will do weight
 
+```{r}
+weight_mean <- function(x){sum(weight)/1000}
+mu_weight <- weight_mean(x)
+mu_weight
 
+pop_v <- function(x){sum((weight-mu_weight)^2)/(1000)}
+v_weight <- pop_v(x)
+v_weight
+
+pop_sd <- function(x){sqrt(v_weight)}
+sd_weight <- pop_sd(x)
+sd_weight
+```
+
+```{r}
+n <- 1000
+v <- rnorm(n,mu_weight,sd_weight)
+hist(v)
+qqnorm(v)
+qqline(v)
+```
+
+The distribution for weight also seems to look very normal as well.
+
+Now I will do age.
+
+```{r}
+age <- (d$age)
+
+age_mean <- function(x){sum(age)/1000}
+mu_age <- age_mean(x)
+mu_age
+
+pop_v <- function(x){sum((age-mu_age)^2)/(1000)}
+v_age <- pop_v(x)
+v_age
+
+pop_sd <- function(x){sqrt(v_age)}
+sd_age <- pop_sd(x)
+sd_age
+```
+
+```{r}
+n <- 1000
+v <- rnorm(n,mu_age,sd_age)
+hist(v)
+qqnorm(v)
+qqline(v)
+```
+this also looks to be quite normal as nothing deviates from the line too much. 
+
+```{r}
+z_killed <- (d$zombies_killed)
+
+z_killed_mean <- function(x){sum(z_killed)/1000}
+mu_z_killed <- z_killed_mean(x)
+mu_z_killed
+
+pop_v <- function(x){sum((z_killed-mu_z_killed)^2)/(1000)}
+v_z_killed <- pop_v(x)
+v_z_killed
+
+pop_sd <- function(x){sqrt(v_z_killed)}
+sd_z_killed <- pop_sd(x)
+sd_z_killed
+```
+
+```{r}
+n <- 1000
+v <- rnorm(n,mu_z_killed,sd_z_killed)
+hist(v)
+qqnorm(v)
+qqline(v)
+```
+
+I will next do years of edu
+
+```{r}
+y_of_edu <- (d$years_of_education)
+
+y_of_edu_mean <- function(x){sum(y_of_edu)/1000}
+mu_y_of_edu <- y_of_edu_mean(x)
+mu_y_of_edu
+
+pop_v <- function(x){sum((y_of_edu-mu_y_of_edu)^2)/(1000)}
+v_y_of_edu <- pop_v(x)
+v_y_of_edu
+
+pop_sd <- function(x){sqrt(v_y_of_edu)}
+sd_y_of_edu <- pop_sd(x)
+sd_y_of_edu
+```
+
+```{r}
+n <- 1000
+v <- rnorm(n,mu_y_of_edu,sd_y_of_edu)
+hist(v)
+qqnorm(v)
+qqline(v)
+```
+
+I cannot find which one of these is not drawn from a normal distribution all of them seemed to be drawn from a normal distribution if I have done this correctly?
+
+Question#5
+
+Now use the sample() function to sample ONE subset of 30 zombie survivors (without replacement) from this population and calculate the mean and sample standard deviation for each variable. Also estimate the standard error for each variable, and construct the 95% confidence interval for each mean. Note that for the variables that are not drawn from the normal distribution, you may need to base your estimate of the CIs on slightly different code than for the normal...
+
+```{r}
+k <- 1
+n <- 30
+s <- NULL
+
+for (i in 1:k){
+    s[[i]] <- sample(d,size=n, replace=FALSE)
+}
+```
+
+the above did not work...
+
+```{r}
+mysample <- d[sample(1:nrow(d), 30,
+   replace=FALSE),]
+mysample
+```
+
+```{r}
+table(mysample$height)
+```
+
+```{r}
+mean(mysample$height)
+sd(mysample$height)
+```
+
+Constucting the standard error for my sample height.
+
+```{r}
+
+```
+
+I am struggling to figure out how to do this, I have spent a long time on number 5 and cannot figure it out I need some help. 
 
