@@ -387,3 +387,15 @@ pop_se <- sqrt(^2/n)
 
 I am struggling to figure out how to do this, I have spent a long time on number 5 and cannot figure it out, I need some help. Something happened to my stnadard deviation from my population once I have removed the 30 variables and now I can not figure out what to do and I have run out of time. 
 
+
+5 Problems:
+
+1. The biggest problem that I had was missing little parts of the code that were simple but very important. specifically I had trouble with the $ function, it worked for some portions of my code and was not needed for others which was confusing to me.
+
+2. I struggled with finding the sample standard error. This took up so much of my time and I could not figure out how to make it work when I should have just moved on and came back to it with fresh eyes.
+
+3. Using the function "ggplot"" correctly, the formatting was different and I struggled to figure this out at first. 
+
+4. The organization of my code is not good right now, I need to try and organize/condense everything over the weekend.
+
+5. In question number 4, I was unable to find which set of data did not follow the normal distribution and thus could not properly answer the last part of #4. 
