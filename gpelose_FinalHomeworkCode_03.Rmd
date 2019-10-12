@@ -65,7 +65,7 @@ pop_v <- function(x){sum((height-mu)^2)/(1000)}
 v_height <- pop_v(x)
 v_height
 
-pop_sd <- function(x){sqrt(v)}
+pop_sd <- function(x){sqrt(v_height)}
 sd_height <- pop_sd(x)
 sd_height
 ```
@@ -323,6 +323,8 @@ n <- 1000
 v <- rnorm(n,mu_z_killed,sd_z_killed)
 hist(v)
 qqnorm(v)
+library(car)
+qqPlot(v)
 qqline(v)
 ```
 
@@ -358,17 +360,6 @@ Question#5
 
 Now use the sample() function to sample ONE subset of 30 zombie survivors (without replacement) from this population and calculate the mean and sample standard deviation for each variable. Also estimate the standard error for each variable, and construct the 95% confidence interval for each mean. Note that for the variables that are not drawn from the normal distribution, you may need to base your estimate of the CIs on slightly different code than for the normal...
 
-```{r}
-k <- 1
-n <- 30
-s <- NULL
-
-for (i in 1:k){
-    s[[i]] <- sample(d,size=n, replace=FALSE)
-}
-```
-
-the above did not work...
 
 ```{r}
 mysample <- d[sample(1:nrow(d), 30,
@@ -388,7 +379,42 @@ sd(mysample$height)
 Constucting the standard error for my sample height.
 
 ```{r}
-pop_se <- sqrt(^2/n)
+pop_se <- sqrt(#need to figure out sigma of population again^2/n)
 ```
 
 I am struggling to figure out how to do this, I have spent a long time on number 5 and cannot figure it out, I need some help. Something happened to my stnadard deviation from my population once I have removed the 30 variables and now I can not figure out what to do and I have run out of time. 
+
+weight of sample.
+
+```{r}
+mean(mysample$weight)
+sd(mysample$weight)
+```
+```{r}
+pop_se <- sqrt(18.39186^2/30)
+pop_se
+```
+
+
+
+Question #6
+
+Now draw 99 more random samples of 30 zombie apocalypse survivors, and calculate the mean for each variable for each of these samples. Together with the first sample you drew, you now have a set of 100 means for each variable (each based on 30 observations), which constitutes a sampling distribution for each variable. What are the means and standard deviations of this distribution of means for each variable? How do the standard deviations of means compare to the standard errors estimated in [5]? What do these sampling distributions look like (a graph might help here)? Are they normally distributed? What about for those variables that you concluded were not originally drawn from a normal distribution?
+
+```{r}
+k <- 99
+n <- 30
+s <- NULL
+
+for (i in 1:k){
+    s[[i]] <- sample(d,size=n, replace=TRUE)
+}
+s
+```
+
+
+
+
+
+
+
