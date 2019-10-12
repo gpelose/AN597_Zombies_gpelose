@@ -5,6 +5,8 @@ date: "10/9/2019"
 output: html_document
 ---
 ***
+## Comments from Laura B-W are at the bottom, underneath each of the five challenges faced.
+
 
 ```{r}
 library("curl")
@@ -13,7 +15,7 @@ library("manipulate")
 library("lmodel2")
 ```
 
-I will first be uploading the zombies.cvs data using the curl cuntion and assigning this the varable "f"
+I will first be uploading the zombies.cvs data using the curl funtion and assigning this the varable "f"
 
 ```{r}
 f <- curl("https://raw.githubusercontent.com/fuzzyatelin/fuzzyatelin.github.io/master/AN597_Fall19/zombies.csv")
@@ -38,7 +40,8 @@ summary(d)
 This above only gives the sample mean I need to find th population mean.  
 
 ```{r}
-table(height)
+height <- table(d$height)
+head(height)
 ```
 
 Finding the populaiton mean and standard deviation for height!
@@ -385,10 +388,22 @@ I am struggling to figure out how to do this, I have spent a long time on number
 
 1. The biggest problem that I had was missing little parts of the code that were simple but very important. specifically I had trouble with the $ function, it worked for some portions of my code and was not needed for others which was confusing to me.
 
+**This was also an issue I had, especially as some functions require you to do this, others require quotation marks, and other still require neither. I think it is a part of something we just have to learn by doing it? I only realized the $ was needed after looking back at old modules with similar types fo questions.**
+
 2. I struggled with finding the sample standard error. This took up so much of my time and I could not figure out how to make it work when I should have just moved on and came back to it with fresh eyes.
+
+**I know for sample standard error, you should just be able to use the sd() function? I was having some issues as well while I was setting it up though, but finally got it if you want to take a look at my code?**
 
 3. Using the function "ggplot"" correctly, the formatting was different and I struggled to figure this out at first. 
 
+**Yes! I always forget that the point of these packages is to streamline things. I kept thinking there was more I would need to put in, for example, to make a boxplot. But then I realized with ggplot, if I told it to make a boxplot, it already has built-in functionality as far as how to then use the data to calculate the size of the boxes, etc.**
+
 4. The organization of my code is not good right now, I need to try and organize/condense everything over the weekend.
 
+**I was able to follow it fine, though there were a few lines that kept giving me errors that I think were working for you. I also liked where you purposely kept in things that you tried and that did not work. I think I will include this for myself in the future, as this really showed me how your train of thought was working and helped me see the same kinds of problems we were coming up against. This could be useful if looking back at this in the future as a reference for other prohects.**
+
 5. In question number 4, I was unable to find which set of data did not follow the normal distribution and thus could not properly answer the last part of #4. 
+
+**It looks like this was something that tripped all of us up! I am guessing Dr. Schmitt will go over it in class, or we can ask, to make sure this is clearer and to find out how we can tell this from just looking at the data, or if there are specific tests we need or can run.**
+
+**Overall, great job! I know this one took a lot of time and it looks like you learned a lot!**
