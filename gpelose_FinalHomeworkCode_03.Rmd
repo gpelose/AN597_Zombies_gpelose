@@ -364,35 +364,110 @@ mysample <- d[sample(1:nrow(d), 30,
 mysample
 ```
 
+height calculations for my n=30 sample.
+***
 ```{r}
 table(mysample$height)
 ```
 
 ```{r}
-mean(mysample$height)
-sd(mysample$height)
+m_h <- mean(mysample$height)
+sd_h <- sd(mysample$height)
+m_h
+sd_h
 ```
 
-Constucting the standard error for my sample height.
-
 ```{r}
-pop_se <- sqrt(#need to figure out sigma of population again^2/n)
+h_pop_se <- sqrt(18.55861^2/30)
+h_pop_se
 ```
 
-I am struggling to figure out how to do this, I have spent a long time on number 5 and cannot figure it out, I need some help. Something happened to my stnadard deviation from my population once I have removed the 30 variables and now I can not figure out what to do and I have run out of time. 
-
-weight of sample.
-
 ```{r}
-mean(mysample$weight)
-sd(mysample$weight)
+lower <- m_h - qnorm(1 - 0.05/2) * h_pop_se 
+upper <- m_h + qnorm(1 - 0.05/2) * h_pop_se 
+ci <- c(lower, upper)
+ci
+```
+
+weight calculations of n=30 sample.
+***
+```{r}
+m_w <- mean(mysample$weight)
+sd_w <-sd(mysample$weight)
+m_w
+sd_w
 ```
 ```{r}
 pop_se <- sqrt(18.39186^2/30)
 pop_se
 ```
 
+```{r}
+lower <- m_w - qnorm(1 - 0.05/2) * pop_se 
+upper <- m_w + qnorm(1 - 0.05/2) * pop_se 
+ci <- c(lower, upper)
+ci
+```
 
+age calculations of my n=30 sample
+***
+```{r}
+m_age <- mean(mysample$age)
+sd_age <-sd(mysample$age)
+m_age
+sd_age
+```
+```{r}
+age_pop_se <- sqrt(2.963583^2/30)
+age_pop_se
+```
+
+```{r}
+lower <- m_age - qnorm(1 - 0.05/2) * age_pop_se 
+upper <- m_age + qnorm(1 - 0.05/2) * age_pop_se 
+ci <- c(lower, upper)
+ci
+```
+
+z_killed calculations of my n=30 sample
+***
+```{r}
+m_z_killed <- mean(mysample$zombies_killed)
+sd_z_killed <- sd(mysample$zombies_killed)
+m_z_killed
+sd_z_killed
+```
+```{r}
+z_killed_pop_se <- sqrt(1.747551^2/30)
+z_killed_pop_se
+```
+
+```{r}
+lower <- m_age - qnorm(1 - 0.05/2) * z_killed_pop_se 
+upper <- m_age + qnorm(1 - 0.05/2) * z_killed_pop_se 
+ci <- c(lower, upper)
+ci
+```
+
+last one, y_of_edu calculations of my n=30 sample 
+***
+```{r}
+m_y_of_edu <- mean(mysample$years_of_education)
+sd_y_of_edu <- sd(mysample$years_of_education)
+m_y_of_edu
+sd_y_of_edu
+```
+```{r}
+y_of_edu_pop_se <- sqrt(1.675704^2/30)
+y_of_edu_pop_se
+```
+
+```{r}
+lower <- m_age - qnorm(1 - 0.05/2) * z_killed_pop_se 
+upper <- m_age + qnorm(1 - 0.05/2) * z_killed_pop_se 
+ci <- c(lower, upper)
+ci
+```
 
 Question #6
 
