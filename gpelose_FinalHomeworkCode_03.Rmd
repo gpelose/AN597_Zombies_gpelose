@@ -228,7 +228,7 @@ pop_v <- function(x){sum((height-mu)^2)/(1000)}
 v_height <- pop_v(x)
 v_height
 
-pop_sd <- function(x){sqrt(v)}
+pop_sd <- function(x){sqrt(v_height)}
 sd_height <- pop_sd(x)
 sd_height
 ```
@@ -240,7 +240,7 @@ hist(v)
 qqnorm(v)
 qqline(v)
 ```
-Yes the distribution for height looks to be quite normal. 
+Yes the distribution for height looks to be normal. 
 
 now I will do weight
 
@@ -321,6 +321,9 @@ qqPlot(v)
 qqline(v)
 ```
 
+for number of zombies killed. I found this distrubtion to not fit the normal curve. I added qqplot and qqline to investigate this a bit more and some of the dots fall slightly outside of the boundaries. Due to this, one could state that the number of zombies killed is skewed to the right.
+
+
 I will next do years of edu
 
 ```{r}
@@ -347,7 +350,8 @@ qqnorm(v)
 qqline(v)
 ```
 
-I cannot find which one of these is not drawn from a normal distribution all of them seemed to be drawn from a normal distribution if I have done this correctly?
+I would say that the years of education look to have a normal distribution as well. The data all falls very close to the normal line. There are a few data points that are a bit skewed on each end but not enough for me to say that this data is not normal. 
+
 
 Question#5
 
