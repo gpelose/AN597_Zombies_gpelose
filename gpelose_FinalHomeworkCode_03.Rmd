@@ -484,9 +484,18 @@ for (i in 1:k){
 s
 ```
 
+I was able to select all 99 samples, I am still struggling to get the mean and sd of all of the samples 
+```{r}
+table(s$height)
+```
+```{r}
+summary(s)
+```
 
+this was the mean that I got 67.56, I will not find the standard deviation 
 
+```{r}
+sd(s)
+```
 
-
-
-
+I am unable to find the standard deviations of each variable individually from my massive sample. 
