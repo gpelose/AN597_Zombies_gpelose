@@ -35,7 +35,7 @@ head(d)
 ```
 
 FIRST QUESTION:
-(reminder to add line)
+***
 Calculate the population mean and standard deviation for each quantitative random variable (height, weight, age, number of zombies killed, and years of education). NOTE: You will not want to use the built in var() and sd() commands as these are for samples.
 
 ```{r}
@@ -48,14 +48,13 @@ names(d)
 summary(d)
 ```
 
-This above only gives the sample mean I need to find th population mean.  
 
 ```{r}
 table(height)
 ```
 
 Finding the populaiton mean and standard deviation for height!
-
+***
 ```{r}
 height_mean <- function(x){sum(height)/1000}
 mu <- height_mean(x)
@@ -70,19 +69,13 @@ sd_height <- pop_sd(x)
 sd_height
 ```
 
+Finding the pop mean and sd for weight
 
-```{r}
-summary(d)
-```
-
-Finding the population mean and sd for weight. (it took me over an hour to realize that i need d$weight instead of just weight, for some reason I do not need the $ for height when doing my first sample)
 ```{r}
 table(d$weight)
 weight <- (d$weight)
 ```
 
-
-Finding the pop mean and sd for weight
 ```{r}
 weight_mean <- function(x){sum(weight)/1000}
 mu_weight <- weight_mean(x)
@@ -192,7 +185,7 @@ boxplot for years of education:
 
 ```{r}
 f <- ggplot(data=d, aes(x=gender, y=years_of_education))
-g <- f + geom_boxplot(color="blue")
+g <- f + geom_boxplot(color="blue") #i like blue
 g
 ```
 
@@ -216,7 +209,7 @@ g
 
 Written response:
 
-height and age is definitely more related than weight and age. As the people get older you seem to generally get taller. There seems like there is a slight trend in weight and age, where as you get older you get heavier, but it is not a pronounced as height vs age. There is definitley more variance in weight and age. 
+height and age is definitely more related than weight and age. As the people get older they also seem to generally get taller. There seems like there is a slight trend in weight and age, where as you get older you get heavier, but it is not as pronounced as height vs age. There is definitley more variance in weight and age. 
 
 Question #4:
 
